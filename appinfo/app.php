@@ -10,5 +10,5 @@ namespace OCA\PasswordDepot\AppInfo;
 
 use OCP\AppFramework\App;
 
+// The app is registered automatically by Nextcloud's bootstrap system
 $app = new Application();
-$app->register();
