@@ -1,3 +1,5 @@
+
+
 <?xml version="1.0"?>
 <info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
@@ -20,7 +22,7 @@ Features:
     <category>tools</category>
     <bugs>https://github.com/nextcloud/apps/issues</bugs>
     <dependencies>
-        <nextcloud min-version="20" max-version="25"/>
+        <nextcloud min-version="20" max-version="55"/>
     </dependencies>
     <navigations>
         <navigation>
