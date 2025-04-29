@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>passworddepot</id>
+    <name>Password Depot</name>
+    <summary>Manage passwords for users and groups</summary>
+    <description><![CDATA[
+Password Depot allows you to securely store and manage passwords for users and groups in your Nextcloud instance.
+Features:
+- Secure password storage with encryption
+- Share passwords with users or groups
+- Organize passwords in categories
+- Search functionality
+]]></description>
+    <version>0.1.0</version>
+    <licence>agpl</licence>
+    <author>Nextcloud Developer</author>
+    <namespace>PasswordDepot</namespace>
+    <category>security</category>
+    <category>tools</category>
+    <bugs>https://github.com/nextcloud/apps/issues</bugs>
+    <dependencies>
+        <nextcloud min-version="20" max-version="25"/>
+    </dependencies>
+    <navigations>
+        <navigation>
+            <name>Password Depot</name>
+            <route>passworddepot.page.index</route>
+            <icon>app.svg</icon>
+        </navigation>
+    </navigations>
+</info>
