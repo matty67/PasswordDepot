@@ -12,19 +12,32 @@ Features:
 - Organize passwords in categories
 - Search functionality
 ]]></description>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <licence>agpl</licence>
     <author>Nextcloud Developer</author>
+    <documentation>
+        <user>https://github.com/nextcloud/passworddepot/wiki/User-Documentation</user>
+        <admin>https://github.com/nextcloud/passworddepot/wiki/Admin-Documentation</admin>
+        <developer>https://github.com/nextcloud/passworddepot/wiki/Developer-Documentation</developer>
+    </documentation>
     <namespace>PasswordDepot</namespace>
     <category>security</category>
     <category>tools</category>
-    <website>https://github.com/nextcloud/apps</website>
-    <bugs>https://github.com/nextcloud/apps/issues</bugs>
-    <repository>https://github.com/nextcloud/apps</repository>
+    <website>https://github.com/nextcloud/passworddepot</website>
+    <bugs>https://github.com/nextcloud/passworddepot/issues</bugs>
+    <repository type="git">https://github.com/nextcloud/passworddepot.git</repository>
     <dependencies>
         <nextcloud min-version="20" max-version="55"/>
     </dependencies>
     <!-- Explicitly tested with Nextcloud 31 -->
+    <repair-steps>
+        <install>
+            <step>OCA\PasswordDepot\Migration\InstallStep</step>
+        </install>
+        <uninstall>
+            <step>OCA\PasswordDepot\Migration\UninstallStep</step>
+        </uninstall>
+    </repair-steps>
     <navigations>
         <navigation>
             <name>Password Depot</name>

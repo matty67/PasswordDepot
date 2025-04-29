@@ -15,6 +15,8 @@ use OCP\AppFramework\Bootstrap\IBootContext;
 use OCA\PasswordDepot\Db\PasswordMapper;
 use OCA\PasswordDepot\Db\ShareMapper;
 use OCA\PasswordDepot\Service\PasswordService;
+use OCA\PasswordDepot\Migration\InstallStep;
+use OCA\PasswordDepot\Migration\UninstallStep;
 
 class Application extends App implements IBootstrap {
     const APP_ID = 'passworddepot';
@@ -46,9 +48,21 @@ class Application extends App implements IBootstrap {
                 $c->get('OCP\Security\ICrypto')
             );
         });
+
+        // Register migration steps
+        $context->registerMigrationStep(InstallStep::class);
+        $context->registerMigrationStep(UninstallStep::class);
     }
 
     public function boot(IBootContext $context) {
         // This method is called when the app is loaded
+        $serverContainer = $context->getServerContainer();
+
+        // Register any app-specific services or event listeners here
+        // For example, you could register event listeners for user or group events
+
+        // Log that the app has been loaded successfully
+        $logger = $serverContainer->get('OCP\ILogger');
+        $logger->info('Password Depot app loaded successfully', ['app' => self::APP_ID]);
     }
 }
