@@ -9,6 +9,18 @@
 namespace OCA\PasswordDepot\AppInfo;
 
 use OCP\AppFramework\App;
+use OCP\AppFramework\Bootstrap\IBootstrap;
+use OC\AppFramework\Utility\SimpleContainer;
+use OCP\IAppManager;
 
-// The app is registered automatically by Nextcloud's bootstrap system
+// Get the app manager
+$appManager = \OC::$server->get(IAppManager::class);
+
+// Check if the app is already registered
+if (!$appManager->isInstalled('passworddepot')) {
+    // Register the app manually
+    $appManager->enableApp('passworddepot');
+}
+
+// Initialize the app
 $app = new Application();
